@@ -7,6 +7,7 @@
   --light-one: #fff;
   --light-two: #f9fafb;
   --light-three: #f6f7fb;
+  --light-four: #f6f6f6;
 }
 
 /*========== Variables Dark theme ==========*/
@@ -16,7 +17,9 @@ body.dark-theme {
   --dark-two: #858585;
   --light-one: #000;
   --light-two: #060504;
-  --light-three: #090804;
+  /* --light-three: #090804; */
+  --light-three: hsl(250, 28%, 12%);
+  --light-four: hsl(252, 56%, 25%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -27,13 +30,13 @@ body.dark-theme {
 
 .change-theme {
   font-size: 1.25rem;
-  color: var(--title-color);
-  margin-right: var(--mb-1);
+  color: var(--main-color);
+  margin-right: 1rem;
   cursor: pointer;
 }
 
 .change-theme:hover {
-  color: var(--first-color);
+  color: burlywood;
 }
 
 /* Genral Styles */
@@ -55,6 +58,7 @@ button,
 input,
 textarea {
   font-family: "Poppins", sans-serif;
+  background-color: var(--light-three);
 }
 
 a {
@@ -182,6 +186,10 @@ img {
   margin-bottom: 0.6rem;
 }
 
+.title-text {
+  color: var(--dark-one);
+}
+
 .title:before {
   content: attr(data-title);
   display: block;
@@ -224,7 +232,7 @@ img {
   display: inline-block;
   padding: 0.85rem 2rem;
   background-color: var(--main-color);
-  color: var(--light-one);
+  color: #fff;
   border-radius: 2rem;
   font-size: 1.05rem;
   text-transform: uppercase;
@@ -288,7 +296,7 @@ nav .container {
 
 .links a.active {
   background-color: var(--main-color);
-  color: var(--light-one);
+  color: #fff;
   border-radius: 2rem;
   font-size: 1rem;
   padding: 0.9rem 2.1rem;
@@ -454,11 +462,11 @@ header .circle {
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: var(--second-color);
+  color: var(--dark-two);
 }
 
 .home__social-icon:hover {
-  color: var(--first-color);
+  color: burlywood;
 }
 
 .nav__icon {
@@ -468,6 +476,57 @@ header .circle {
 .change-theme {
   margin: 0;
 }
+
+.toggle {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+
+.toggle i {
+  width: 50%;
+  line-height: 40px;
+  margin-left: 5px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 1;
+}
+
+.toggle .ball {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  margin: 7.5px;
+  border-radius: 50%;
+  transition: 0.3s ease-out;
+}
+
+.light {
+  background: var(--light-three);
+}
+
+.light .toggle {
+  background: linear-gradient(145deg, #e1e1e1, #fff);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
+}
+
+.light .toggle .bxs-sun {
+  color: #fafafa;
+}
+
+.light .toggle .bx-moon {
+  color: #151d2a;
+}
+
+.light .toggle .ball {
+  background: #151d2a;
+}
+
 /* End header */
 
 /* Services */
@@ -489,7 +548,7 @@ header .circle {
   width: 100%;
   max-width: 390px;
   min-height: 520px;
-  background-color: var(--light-three);
+  background-color: var(--light-four);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -497,6 +556,8 @@ header .circle {
   padding: 3rem 2rem;
   overflow: hidden;
   transition: 0.3s;
+  border-radius: 1.5rem;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .card:before {
@@ -579,7 +640,7 @@ header .circle {
 
 .portfolio .title,
 .portfolio .title:before {
-  color: var(--light-one);
+  color: #fff;
 }
 
 .portfolio .title:after {
@@ -797,6 +858,10 @@ header .circle {
   left: 0;
   background-color: var(--main-color);
   transition: 1s;
+}
+
+.title-about {
+  color: var(--dark-one);
 }
 
 .about .column-1 {
@@ -1111,6 +1176,7 @@ header .circle {
   position: relative;
   width: 100%;
   padding: 13.5rem 0 8.5rem;
+  color: var(--dark-one);
 }
 
 .contact:before,
@@ -1176,7 +1242,7 @@ header .circle {
   display: inline-block;
   border-radius: 50%;
   background-color: var(--main-color);
-  color: var(--light-one);
+  color: #fff;
   text-align: center;
   font-size: 1.4rem;
   margin-right: 1rem;
@@ -1261,6 +1327,9 @@ header .circle {
   margin: 0 auto 1.6rem auto;
 }
 
+.title-hireme {
+  color: var(--dark-one);
+}
 /* End Hire me */
 
 /* Footer */
